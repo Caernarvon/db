@@ -6,7 +6,8 @@ jdk:
 sudo: required
 
 before_install:
-  - chmod +x gradlew
+  - chmod +x 
+  - ./gradlew assemble --stacktrace
  
 script:
   - ./gradlew clean build -i --continue
