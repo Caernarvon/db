@@ -39,8 +39,8 @@ public class MigrationsTest {
     @Test
     public void setDataTest1() throws SQLException, LiquibaseException, ClassNotFoundException {
         Connect.connect();
-        //Main.create_tables();
-        //Main.fill_tables();
+        Main.create_tables();
+        Main.fill_tables();
         GetData.getData();
         Country country = new Country(1, "UA", "Ukraine", 1);
         assertEquals(true, country.equals(GetData.countries.get(0)));
@@ -49,8 +49,8 @@ public class MigrationsTest {
     @Test
     public void setDataTest2() throws SQLException, LiquibaseException, ClassNotFoundException {
         Connect.connect();
-        //Main.create_tables();
-        //Main.fill_tables();
+        Main.create_tables();
+        Main.fill_tables();
         GetData.getData();
         Country_nationalities countryNationality = new Country_nationalities(1, 1);
         assertEquals(true, countryNationality.equals(GetData.countryNationalities.get(0)));
@@ -59,8 +59,8 @@ public class MigrationsTest {
     @Test
     public void setDataTest3() throws SQLException, LiquibaseException, ClassNotFoundException {
         Connect.connect();
-        //Main.create_tables();
-        //Main.fill_tables();;
+        Main.create_tables();
+        Main.fill_tables();;
         GetData.getData();
         Emblem emblem = new Emblem(1, "Ukrainian nat. emblem");
         assertEquals(true, emblem.equals(GetData.emblems.get(0)));
@@ -69,8 +69,8 @@ public class MigrationsTest {
     @Test
     public void setDataTest4() throws SQLException, LiquibaseException, ClassNotFoundException {
         Connect.connect();
-        //Main.create_tables();
-        //Main.fill_tables();
+        Main.create_tables();
+        Main.fill_tables();
         GetData.getData();
         Locality locality = new Locality(1,	"Kyiv",	4000000,
                 true,	true,	1,	1,	6,	1);
@@ -80,8 +80,8 @@ public class MigrationsTest {
     @Test
     public void setDataTest5() throws SQLException, LiquibaseException, ClassNotFoundException {
         Connect.connect();
-        //Main.create_tables();
-        //Main.fill_tables();
+        Main.create_tables();
+        Main.fill_tables();
         GetData.getData();
         Locality_type localityType = new Locality_type(1	, "I",
                 "There will be first type description.");
@@ -91,8 +91,8 @@ public class MigrationsTest {
     @Test
     public void setDataTest6() throws SQLException, LiquibaseException, ClassNotFoundException {
         Connect.connect();
-        //Main.create_tables();
-        //Main.fill_tables();
+        Main.create_tables();
+        Main.fill_tables();
         GetData.getData();
         Nationality nationality = new Nationality(1,	"Ukrainians",	"white");
         assertEquals(true, nationality.equals(GetData.nationalities.get(0)));
@@ -101,8 +101,8 @@ public class MigrationsTest {
     @Test
     public void setDataTest7() throws SQLException, LiquibaseException, ClassNotFoundException {
         Connect.connect();
-        //Main.create_tables();
-        //Main.fill_tables();
+        Main.create_tables();
+        Main.fill_tables();
         GetData.getData();
         Region region = new Region(1,	"Kyiv  region",	1839,	1700000,
                 "50°27′00″N 30°31′24″E",	21);
@@ -112,8 +112,8 @@ public class MigrationsTest {
     @Test
     public void setRowTest() throws SQLException, LiquibaseException, ClassNotFoundException {
         Connect.connect();
-        //Main.create_tables();
-        //Main.fill_tables();
+        Main.create_tables();
+        Main.fill_tables();
         Main.insert_inTable();
         GetData.getData();
         Emblem emblem = new Emblem(36,	"Test emblem");
@@ -123,8 +123,8 @@ public class MigrationsTest {
     @Test
     public void updateRowTest() throws SQLException, LiquibaseException, ClassNotFoundException {
         Connect.connect();
-        //Main.create_tables();
-        //Main.fill_tables();
+        Main.create_tables();
+        Main.fill_tables();
         Main.update_row();
         GetData.getData();
         Emblem emblem = new Emblem(36, "executedMigration test");
@@ -134,8 +134,8 @@ public class MigrationsTest {
     @Test
     public void selectTest() throws SQLException, LiquibaseException, ClassNotFoundException {
         Connect.connect();
-        //Main.create_tables();
-        //Main.fill_tables();
+        Main.create_tables();
+        Main.fill_tables();
         Main.select_fromTables();
         GetData.getData();
     }
@@ -143,8 +143,8 @@ public class MigrationsTest {
     @Test
     public void deleteRowTest() throws SQLException, LiquibaseException, ClassNotFoundException {
         Connect.connect();
-        //Main.create_tables();
-        //Main.fill_tables();
+        Main.create_tables();
+        Main.fill_tables();
         Main.delete_certainRows();
         GetData.getData();
         boolean bool = true;
