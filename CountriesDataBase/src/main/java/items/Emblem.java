@@ -1,7 +1,5 @@
 package items;
 
-import java.util.Objects;
-
 public class Emblem {
     public int id;
     public String name;
