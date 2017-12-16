@@ -6,4 +6,4 @@ jdk:
 sudo: required
 
 script:
-  - ./gradlew build
+  - test \db\CountriesDataBase\src\test\java\MigrationsTest.java
