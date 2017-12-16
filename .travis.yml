@@ -5,6 +5,9 @@ jdk:
 
 sudo: required
 
+install: 
+- ./gradlew assemble --stacktrace
+
 before_install:
   - ./gradlew assemble --stacktrace
  
