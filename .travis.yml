@@ -6,10 +6,7 @@ jdk:
 sudo: required
 
 install: 
-- ./gradlew assemble --stacktrace
-
-before_install:
   - ./gradlew assemble --stacktrace
- 
+
 script:
-  - ./gradlew clean build -i --continue
+  - ./gradlew build
