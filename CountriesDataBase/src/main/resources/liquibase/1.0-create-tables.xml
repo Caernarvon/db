@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="create_tables" author="postgres">
+        <sql>
+            CREATE TABLE public.Emblem
+            (
+            id integer PRIMARY KEY NOT NULL,
+            name text
+            );
+
+            CREATE TABLE public.Country
+            (
+            id integer PRIMARY KEY NOT NULL,
+            short_name text NOT NULL,
+            full_name text NOT NULL,
+            emblem_id integer REFERENCES Emblem.id
+            );
+
+            CREATE TABLE public.Nationality
+            (
+            id SERIAL NOT NULL,
+            name text NOT NULL,
+            skin_color text
+            );
+
+            CREATE TABLE public.Region
+            (
+            id SERIAL PRIMARY KEY NOT NULL
+            name text NOT NULL,
+            code integer,
+            population_amount integer,
+            geo_data varchar,
+            emblem_id integer REFERENCES Emblem.id
+            );
+
+            CREATE TABLE public.Locality_type
+            (
+            id SERIAL PRIMARY KEY NOT NULL,
+            type text,
+            description text
+            );
+
+            CREATE TABLE public.Locality
+            (
+            id SERIAL PRIMARY KEY NOT NULL,
+            name text NOT NULL,
+            population_amount integer,
+            is_capital boolean,
+            is_region_centre boolean,
+            country_id integer REFERENCES Country.id,
+            locality_type_id integer REFERENCES Locality_type.id,
+            emblem_id integer REFERENCES Emblem.id,
+            region_id integer REFERENCES Region.id
+            );
+
+            CREATE TABLE public.Country_nationalities
+            (
+            country_id integer REFERENCES Country.id,
+            nation_id integer REFERENCES Nationality.id
+            );
+        </sql>
+    </changeSet>
+</databaseChangeLog>
