@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CountriesDataBase.iml" filepath="$PROJECT_DIR$/.idea/modules/CountriesDataBase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CountriesDataBase_main.iml" filepath="$PROJECT_DIR$/.idea/modules/CountriesDataBase_main.iml" group="CountriesDataBase" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CountriesDataBase_test.iml" filepath="$PROJECT_DIR$/.idea/modules/CountriesDataBase_test.iml" group="CountriesDataBase" />
       <module fileurl="file://$PROJECT_DIR$/db.iml" filepath="$PROJECT_DIR$/db.iml" />
     </modules>
   </component>
